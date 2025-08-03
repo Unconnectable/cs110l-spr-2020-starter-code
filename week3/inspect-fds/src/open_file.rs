@@ -125,13 +125,13 @@ impl OpenFile {
     /// simple way to indicate that "hey, we weren't able to get the necessary information"
     /// without making a big deal of it.)
     pub fn from_fd(pid: usize, fd: usize) -> Option<OpenFile> {
-        //找到文件描述符 fd 对应的真实文件路径，并从中提取出文件名称
+        //找到文件描述符 fd 对应的真实文件路径,并从中提取出文件名称
         let fd_path = format!("/proc/{}/fd/{}", pid, fd);
         let name_path = fs::read_link(fd_path).ok()?;
         let name_str = name_path.to_str()?;
         let name = OpenFile::path_to_name(name_str);
 
-        //读取文件描述符的元数据，比如当前的文件读写位置和访问模式
+        //读取文件描述符的元数据,比如当前的文件读写位置和访问模式
         let fdinfo = format!("/proc/{}/fdinfo/{}", pid, fd);
         let content = fs::read_to_string(fdinfo).ok()?;
         let cursor = OpenFile::parse_cursor(&content)?;
