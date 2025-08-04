@@ -8,8 +8,15 @@ know](mailto:ryan@reberhardt.com); we'd love to hear from you!
 Please don't post solution code publicly on the internet. We have plagiarism
 detection tools, but we'd rather make it hard to plagiarize in the first place.
 
+---
+
 ## 补充内容
 
-### `cs110l-spr-2020-starter-code-main.zip` 是对应的原始仓库的文件夹
+`resources/cs110l-spr-2020-starter-code-main.zip` 是对应的原始仓库的文件夹
 
-### 题解在`/soluitions`下面
+`slides`下有官方对应的 ppt 和中文翻译版本
+
+题解在`/soluitions`文件夹中
+
+`script.py`是用于替换中文符号为英文符号的脚本
+`search.py`是用于搜索文件的脚本
